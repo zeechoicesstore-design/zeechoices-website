@@ -16,7 +16,7 @@ jobs:
       - name: Checkout website
         uses: actions/checkout@v4
 
-      - name: Fetch Etsy listings
+      - name: Fetch Etsy listings and images
         env:
           ETSY_API_KEY: ${{ secrets.ETSY_API_KEY }}
           ETSY_SHARED_SECRET: ${{ secrets.ETSY_SHARED_SECRET }}
@@ -27,10 +27,11 @@ jobs:
           import os
           import urllib.parse
           import urllib.request
+          import urllib.error
 
-          key = os.environ["ETSY_API_KEY"]
-          secret = os.environ["ETSY_SHARED_SECRET"]
-          shop_name = os.environ["ETSY_SHOP_NAME"]
+          key = os.environ.get("ETSY_API_KEY", "")
+          secret = os.environ.get("ETSY_SHARED_SECRET", "")
+          shop_name = os.environ.get("ETSY_SHOP_NAME", "")
 
           if not key or not secret:
               raise SystemExit("Etsy API secrets are missing.")
@@ -41,12 +42,8 @@ jobs:
           }
 
           def get_json(url):
-              request = urllib.request.Request(
-                  url, headers=headers
-              )
-              with urllib.request.urlopen(
-                  request, timeout=30
-              ) as response:
+              request = urllib.request.Request(url, headers=headers)
+              with urllib.request.urlopen(request, timeout=30) as response:
                   return json.load(response)
 
           query = urllib.parse.urlencode({
@@ -55,8 +52,7 @@ jobs:
           })
 
           shops = get_json(
-              "https://openapi.etsy.com/v3/application/shops?"
-              + query
+              "https://openapi.etsy.com/v3/application/shops?" + query
           )
 
           matches = [
@@ -67,8 +63,8 @@ jobs:
 
           if len(matches) != 1:
               raise SystemExit(
-                  "Could not identify exactly one Etsy shop. "
-                  "Check ETSY_SHOP_NAME in the workflow."
+                  "Could not identify the Etsy shop. "
+                  "Check ETSY_SHOP_NAME."
               )
 
           shop_id = matches[0]["shop_id"]
@@ -82,37 +78,60 @@ jobs:
                   "offset": offset,
                   "includes": "Images"
               })
+
               url = (
                   "https://openapi.etsy.com/v3/application/"
                   f"shops/{shop_id}/listings/active?{params}"
               )
+
               data = get_json(url)
               listings = data.get("results", [])
 
               for item in listings:
                   price = item.get("price", {})
+
                   if isinstance(price, dict):
                       divisor = price.get("divisor", 1) or 1
-                      price_value = (
-                          price.get("amount", 0) / divisor
-                      )
+                      price_value = price.get("amount", 0) / divisor
                       currency = price.get("currency_code", "")
                   else:
                       price_value = price
                       currency = ""
 
+                  listing_id = item.get("listing_id")
                   images = item.get("images", item.get("Images", []))
+
+                  if not isinstance(images, list):
+                      images = []
+
+                  if not images and listing_id:
+                      image_api = (
+                          "https://openapi.etsy.com/v3/application/"
+                          f"listings/{listing_id}/images"
+                      )
+                      try:
+                          image_data = get_json(image_api)
+                          images = image_data.get("results", [])
+                      except Exception as error:
+                          print(
+                              f"Could not fetch images for "
+                              f"{listing_id}: {error}"
+                          )
+
                   image_url = ""
-                  if images:
+
+                  for picture in images:
                       image_url = (
-                          images[0].get("url_fullxfull")
-                          or images[0].get("url_570xN")
-                          or images[0].get("url_170x135")
+                          picture.get("url_fullxfull")
+                          or picture.get("url_570xN")
+                          or picture.get("url_170x135")
                           or ""
                       )
+                      if image_url:
+                          break
 
                   products.append({
-                      "listing_id": item.get("listing_id"),
+                      "listing_id": listing_id,
                       "title": item.get("title", ""),
                       "url": item.get("url", ""),
                       "price": price_value,
@@ -122,15 +141,16 @@ jobs:
 
               if len(listings) < limit:
                   break
+
               offset += limit
 
           with open("products.json", "w", encoding="utf-8") as file:
-              json.dump(
-                  products, file,
-                  ensure_ascii=False, indent=2
-              )
+              json.dump(products, file, ensure_ascii=False, indent=2)
 
+          image_count = sum(1 for product in products if product["image"])
           print(f"Fetched {len(products)} Etsy listings.")
+          print(f"Listings with images: {image_count}")
+
           PY
 
       - name: Commit updated products
@@ -143,4 +163,4 @@ jobs:
           else
             git commit -m "Update Etsy products"
             git push
-          fi
+          fi 
