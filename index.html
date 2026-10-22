@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><link rel="icon" type="image/png" href="./favicon.png?v=2">
+<html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Shop ZeeChoices for thoughtful designs, printable learning books, digital downloads, clothing, accessories and gifts.">
 <meta name="theme-color" content="#fff5fa"><title>ZeeChoices | Thoughtful Designs - Everyday Style</title>
@@ -13,25 +13,83 @@
 .searchbox{display:flex;align-items:center;border:1px solid #edb8d1;border-radius:999px;overflow:hidden}.searchbox input{border:0;outline:0;flex:1;min-width:0;padding:13px 17px;font:inherit}.searchbox button{width:45px;height:43px;margin:3px;border:0;border-radius:999px;background:var(--pink);color:#fff;font-size:1.2rem;cursor:pointer}
 .header-actions{display:flex;gap:16px}.header-actions a{text-decoration:none;text-align:center;font-size:.76rem;white-space:nowrap}.header-actions span{display:block;font-size:1.3rem}
 .nav{max-width:1450px;margin:auto;display:flex;gap:2px;padding:0 22px 9px;overflow-x:auto}.nav a{padding:10px 12px;text-decoration:none;font-size:.85rem;font-weight:750;white-space:nowrap;border-bottom:3px solid transparent}.nav a:hover,.nav a.active{color:var(--pink2);border-bottom-color:var(--pink)}
+/* Animated scrolling brand text */
+.text-marquee{overflow:hidden;background:#30244e;color:#fff;padding:10px 0;white-space:nowrap;border-bottom:1px solid #e8c6dc}
+.text-marquee-track{display:flex;width:max-content;animation:zeeTextFlow 24s linear infinite}
+.text-marquee span{display:inline-block;padding:0 26px;font-size:.82rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+@keyframes zeeTextFlow{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.text-marquee:hover .text-marquee-track{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.text-marquee-track{animation:none;transform:none;flex-wrap:wrap;width:auto;justify-content:center}.text-marquee{white-space:normal}}
 .hero{background:linear-gradient(100deg,#f9dce9,#f8e8f1 48%,#f1eaff);border-bottom:1px solid #f1d9e8}.hero-inner{max-width:1450px;margin:auto;min-height:300px;padding:32px 5%;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:24px}.eyebrow{font-size:.75rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase;color:#a32b70}.hero h1{font-family:Georgia,serif;font-size:clamp(2.7rem,5vw,5rem);letter-spacing:-.06em;line-height:1;margin:10px 0;color:var(--navy)}.tagline{font-size:clamp(1.05rem,2vw,1.4rem);margin:0 0 12px}.intro{max-width:600px;color:#544865;margin:0 0 17px}.promise{display:flex;flex-wrap:wrap;gap:9px 15px;font-size:.8rem;font-weight:750;margin-bottom:18px}.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--pink);color:white;text-decoration:none;border-radius:999px;padding:12px 21px;font-weight:850;border:0;cursor:pointer}.pill:hover{background:var(--pink2)}
 .hero-art{display:grid;grid-template-columns:1.2fr .8fr;gap:11px;align-items:center}.hero-art img{width:100%;height:230px;object-fit:cover;border-radius:16px;box-shadow:0 10px 28px #39224b20}.hero-art .small{display:grid;gap:11px}.hero-art .small img{height:109px}
 .offers{background:linear-gradient(120deg,#f1edff,#fff7fb 50%,#f2edff);padding:20px 25px 24px}.offers-inner{max-width:1450px;margin:auto}.offers-title{text-align:center;margin-bottom:16px}.offers-title h2{font-size:clamp(1.7rem,3vw,2.4rem);margin:0}.offers-title p{margin:2px 0 0;color:#3150b5;font-weight:800}.offer-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.offer-card{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:122px;padding:15px;border:1px solid white;border-radius:8px;text-decoration:none;background:linear-gradient(110deg,#ffd8e8,#fff0f6)}.offer-card:nth-child(2){background:linear-gradient(110deg,#e4eaff,#d9e5ff)}.offer-card:nth-child(3){background:linear-gradient(110deg,#ffe3ef,#fff5fa)}.offer-card:nth-child(4){background:linear-gradient(110deg,#e3e9ff,#d7e4ff)}.offer-card strong{display:block;font-size:.95rem}.offer-card .sub{display:block;font-weight:900;font-size:.8rem;margin:3px 0 9px}.offer-cta{display:inline-block;border-radius:999px;background:var(--pink);color:white;padding:7px 11px;font-size:.74rem}.offer-emoji{font-size:2.5rem}
 .section{max-width:1450px;margin:auto;padding:38px 25px}.heading{text-align:center;margin-bottom:20px}.heading h2{font-size:clamp(1.8rem,3vw,2.5rem);margin:0;letter-spacing:-.04em}.heading p{margin:5px 0;color:var(--muted)}
 .categories{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}.category-tile{border:1px solid var(--line);border-radius:14px;padding:16px 7px;background:#fff8fc;text-align:center;font:inherit;color:var(--navy);cursor:pointer}.category-tile:hover{border-color:#e9a9cc;background:var(--pale)}.category-tile .emoji{display:block;font-size:1.7rem;margin-bottom:5px}.category-tile strong{font-size:.83rem}
-.filters{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:20px}.filter{border:1px solid #e7d7e8;background:#fff;border-radius:999px;padding:9px 13px;font:inherit;font-size:.82rem;font-weight:800;color:#514360;cursor:pointer}.filter.active,.filter:hover{background:var(--pink);border-color:var(--pink);color:white}.count{font-size:.88rem;color:var(--muted);margin:0 0 14px}.product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}.product-card{min-width:0;display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:13px;background:#fff;transition:transform .18s,box-shadow .18s}.product-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px #2b194015}.product-card[hidden]{display:none}.product-image{aspect-ratio:1;display:grid;place-items:center;background:#fbf5fb;overflow:hidden;text-decoration:none}.product-image img{width:100%;height:100%;object-fit:cover;display:block}.product-info{display:flex;flex-direction:column;align-items:flex-start;gap:9px;padding:13px;flex:1}.tag{font-size:.69rem;font-weight:850;color:#8a3d79;background:#fff0f7;border-radius:999px;padding:4px 8px}.product-info h3{font-size:.92rem;line-height:1.4;margin:0}.price{font-weight:900;color:#68458a;margin:auto 0 0}.product-link{width:100%;text-align:center;text-decoration:none;border:1px solid #edbfd8;color:var(--pink2);border-radius:8px;padding:9px;font-size:.83rem;font-weight:850}.product-link:hover{background:var(--pale)}.empty{display:none;text-align:center;padding:30px;color:var(--muted)}
-.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;background:#faf8ff;border-block:1px solid var(--line);padding:19px 20px;text-align:center;font-weight:800;font-size:.85rem}.footer{background:linear-gradient(120deg,#211b43,#30244e);color:white;padding:32px 25px 17px}.footer-grid{max-width:1390px;margin:auto;display:grid;grid-template-columns:1.3fr .8fr .9fr .8fr 1fr;gap:23px}.footer h3{font-size:.96rem;margin:0 0 10px}.footer p,.footer a{font-size:.83rem;color:#eee8f5}.footer a{display:block;text-decoration:none;margin:4px 0}.footer a:hover{color:#ffb8d8}.footer-brand{font-family:Georgia,serif;font-size:1.7rem;font-weight:bold}.copyright{max-width:1390px;margin:22px auto 0;padding-top:14px;border-top:1px solid #ffffff4a;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.79rem;color:#eee8f5}
-@media(max-width:1050px){.header-main{grid-template-columns:auto 1fr;gap:13px}.header-actions{display:none}.hero-inner{grid-template-columns:1fr 1fr}.offer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.categories{grid-template-columns:repeat(3,minmax(0,1fr))}.footer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:680px){.header-main{padding:10px 13px;grid-template-columns:1fr;gap:9px}.brand{min-width:0}.brand-name{font-size:1.7rem}.brand-mark{font-size:2rem}.nav{padding:0 9px 7px}.nav a{padding:9px;font-size:.78rem}.hero-inner{grid-template-columns:1fr;padding:29px 17px;gap:17px}.hero h1{font-size:3rem}.hero-art img{height:180px}.hero-art .small img{height:84px}.offers{padding:20px 12px}.offer-grid{gap:8px}.offer-card{min-height:115px;padding:10px}.offer-card strong{font-size:.83rem}.offer-card .sub{font-size:.72rem}.offer-emoji{font-size:1.9rem}.section{padding:32px 13px}.categories{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-info{padding:10px}.product-info h3{font-size:.83rem}.product-link{font-size:.76rem;padding:8px 4px}.trust{grid-template-columns:repeat(2,1fr);font-size:.76rem;padding:15px 8px}.footer{padding:26px 15px 14px}.footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.footer-grid>div:first-child{grid-column:1/-1}}
+.filters{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:20px}.filter{border:1px solid #e7d7e8;background:#fff;border-radius:999px;padding:9px 13px;font:inherit;font-size:.82rem;font-weight:800;color:#514360;cursor:pointer}.filter.active,.filter:hover{background:var(--pink);border-color:var(--pink);color:white}.currency-tools{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin:0 auto 14px;font-size:.84rem;color:var(--muted)}.currency-tools label{font-weight:800}.currency-tools select{max-width:100%;border:1px solid var(--line);border-radius:8px;padding:8px;background:#fff;color:var(--navy);font:inherit}.currency-tools span{font-size:.78rem}.count{font-size:.88rem;color:var(--muted);margin:0 0 14px}.product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}.product-card{min-width:0;display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:13px;background:#fff;transition:transform .18s,box-shadow .18s}.product-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px #2b194015}.product-card[hidden]{display:none}.product-image{aspect-ratio:1;display:grid;place-items:center;background:#fbf5fb;overflow:hidden;text-decoration:none}.product-image img{width:100%;height:100%;object-fit:cover;display:block}.product-info{display:flex;flex-direction:column;align-items:flex-start;gap:9px;padding:13px;flex:1}.tag{font-size:.69rem;font-weight:850;color:#8a3d79;background:#fff0f7;border-radius:999px;padding:4px 8px}.product-info h3{font-size:.92rem;line-height:1.4;margin:0}.price{font-weight:900;color:#68458a;margin:auto 0 0}.product-link{width:100%;text-align:center;text-decoration:none;border:1px solid #edbfd8;color:var(--pink2);border-radius:8px;padding:9px;font-size:.83rem;font-weight:850}.product-link:hover{background:var(--pale)}.empty{display:none;text-align:center;padding:30px;color:var(--muted)}
+.video-section{background:linear-gradient(135deg,#fff5fa,#f4f0ff);border-block:1px solid var(--line)}.video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.video-card{overflow:hidden;border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:0 8px 24px #2b19400b}.video-art{aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(135deg,#f8cfe1,#e7dcff);font-size:3rem;position:relative}.video-art:after{content:"▶";position:absolute;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:#ffffffd9;color:var(--pink2);font-size:1.5rem;padding-left:4px}.video-copy{padding:15px}.video-copy h3{margin:0 0 5px;font-size:1.05rem}.video-copy p{margin:0;color:var(--muted);font-size:.88rem}.video-note{text-align:center;color:var(--muted);font-size:.83rem;margin:16px 0 0}.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;background:#faf8ff;border-block:1px solid var(--line);padding:19px 20px;text-align:center;font-weight:800;font-size:.85rem}.footer{background:linear-gradient(120deg,#211b43,#30244e);color:white;padding:32px 25px 17px}.footer-grid{max-width:1390px;margin:auto;display:grid;grid-template-columns:1.3fr .8fr .9fr .8fr 1fr;gap:23px}.footer h3{font-size:.96rem;margin:0 0 10px}.footer p,.footer a{font-size:.83rem;color:#eee8f5}.footer a{display:block;text-decoration:none;margin:4px 0}.footer a:hover{color:#ffb8d8}.footer-brand{font-family:Georgia,serif;font-size:1.7rem;font-weight:bold}.copyright{max-width:1390px;margin:22px auto 0;padding-top:14px;border-top:1px solid #ffffff4a;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.79rem;color:#eee8f5}
+@media(max-width:1050px){.header-main{grid-template-columns:auto 1fr;gap:13px}.header-actions{display:none}.hero-inner{grid-template-columns:1fr 1fr}.offer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.categories{grid-template-columns:repeat(3,minmax(0,1fr))}.footer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.header-main{padding:10px 13px;grid-template-columns:1fr;gap:9px}.brand{min-width:0}.brand-name{font-size:1.7rem}.brand-mark{font-size:2rem}.nav{padding:0 9px 7px}.nav a{padding:9px;font-size:.78rem}.hero-inner{grid-template-columns:1fr;padding:29px 17px;gap:17px}.hero h1{font-size:3rem}.hero-art img{height:180px}.hero-art .small img{height:84px}.offers{padding:20px 12px}.offer-grid{gap:8px}.offer-card{min-height:115px;padding:10px}.offer-card strong{font-size:.83rem}.offer-card .sub{font-size:.72rem}.offer-emoji{font-size:1.9rem}.section{padding:32px 13px}.categories{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-info{padding:10px}.product-info h3{font-size:.83rem}.product-link{font-size:.76rem;padding:8px 4px}.trust{grid-template-columns:repeat(2,1fr);font-size:.76rem;padding:15px 8px}.footer{padding:26px 15px 14px}.footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.footer-grid>div:first-child{grid-column:1/-1}.video-grid{grid-template-columns:1fr}}
 @media(max-width:360px){.offer-grid,.product-grid{grid-template-columns:1fr}.hero-art{grid-template-columns:1fr 1fr}}
+
+/* Welcome popup shown on every fresh website visit */
+.welcome-overlay{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(28,18,43,.68);backdrop-filter:blur(5px)}
+.welcome-overlay[hidden]{display:none}
+.welcome-modal{position:relative;width:min(520px,100%);overflow:hidden;border:1px solid #f3c9df;border-radius:22px;background:linear-gradient(140deg,#fff8fc,#f0ebff);box-shadow:0 24px 80px #140d2c55;text-align:center;padding:34px 22px 27px}
+.welcome-close{position:absolute;top:10px;right:12px;width:38px;height:38px;border:0;border-radius:50%;background:#fff;color:#30244e;font-size:1.55rem;cursor:pointer;box-shadow:0 2px 10px #211b4318}
+.welcome-flower{font-size:2.4rem;line-height:1.2}.welcome-modal h2{font-family:Georgia,serif;font-size:clamp(2rem,7vw,2.8rem);letter-spacing:-.04em;margin:8px 0;color:var(--navy)}
+.welcome-modal p{color:#62536f;margin:0 auto 18px;max-width:390px}.welcome-marquee{overflow:hidden;white-space:nowrap;border-block:1px solid #efc9df;background:#fff;margin:20px -22px;padding:12px 0;color:#a52c70;font-weight:850;letter-spacing:.04em}.welcome-marquee-track{display:flex;width:max-content;animation:welcomeFlow 16s linear infinite}.welcome-marquee-track span{padding:0 22px}.welcome-marquee:hover .welcome-marquee-track{animation-play-state:paused}.welcome-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}.welcome-actions a,.welcome-actions button{font:inherit;font-size:.9rem;font-weight:850;text-decoration:none;border-radius:999px;padding:11px 18px;cursor:pointer}.welcome-shop{background:var(--pink);color:#fff;border:1px solid var(--pink)}.welcome-continue{background:#fff;color:var(--navy);border:1px solid #ddc9e3}
+@keyframes welcomeFlow{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.welcome-marquee-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto;white-space:normal}}
+@media(max-width:420px){.welcome-modal{padding:28px 16px 22px}.welcome-marquee{margin-inline:-16px}.welcome-modal h2{font-size:2rem}}
+
+
+/* ZeeChoices premium polish: refined boutique styling */
+:root{--navy:#211638;--navy2:#39204e;--pink:#df3d88;--pink2:#b92369;--pale:#fff4f9;--lav:#f3efff;--line:#eaddec;--muted:#74677f}
+body{background:linear-gradient(180deg,#fff 0%,#fffafd 55%,#fff 100%)}
+.announcement{background:linear-gradient(90deg,#211638,#51315e,#211638);letter-spacing:.04em;padding:9px 14px}
+.topbar{background:rgba(255,255,255,.92);backdrop-filter:blur(16px);box-shadow:0 8px 28px #2b19400b}
+.brand-mark{filter:drop-shadow(0 4px 6px #df3d8820);transition:transform .3s}.brand:hover .brand-mark{transform:rotate(-10deg) scale(1.08)}
+.brand-name{background:linear-gradient(110deg,#211638 10%,#a32b70 70%,#51315e);-webkit-background-clip:text;background-clip:text;color:transparent}
+.searchbox{background:#fff;box-shadow:0 4px 16px #2b194009;transition:box-shadow .2s,border-color .2s}.searchbox:focus-within{border-color:#df3d88;box-shadow:0 0 0 4px #df3d8817}
+.nav a{border-radius:9px 9px 0 0;transition:background .2s,color .2s}.nav a:hover{background:#fff2f8}
+.text-marquee{background:linear-gradient(90deg,#211638,#4a2a60 50%,#211638);padding:12px 0}.text-marquee span{letter-spacing:.14em}
+.hero{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 80% 20%,#fff 0%,transparent 34%),linear-gradient(115deg,#fae3ed 0%,#fff3f8 47%,#eee7ff 100%)}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none;z-index:-1}.hero:before{width:270px;height:270px;right:-75px;top:-120px;border:1px solid #df3d8830;box-shadow:0 0 0 25px #ffffff25,0 0 0 55px #ffffff18}.hero:after{width:150px;height:150px;left:-70px;bottom:-95px;background:#fff7fb99}
+.hero-inner{min-height:365px;padding-top:44px;padding-bottom:44px}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #e9bdd5;background:#ffffff9c;border-radius:999px;padding:7px 12px;letter-spacing:.12em}.hero h1{font-size:clamp(3.1rem,6vw,5.6rem);text-shadow:0 7px 25px #39224b0c}.tagline{font-weight:750;color:#56345f}.intro{line-height:1.8}.promise span{background:#ffffffa8;border:1px solid #ffffffc7;border-radius:999px;padding:6px 10px}.hero .pill{box-shadow:0 8px 20px #df3d8835;transition:transform .2s,box-shadow .2s}.hero .pill:hover{transform:translateY(-2px);box-shadow:0 12px 25px #df3d8840}
+.hero-art img{border:4px solid #ffffffb8;border-radius:22px;box-shadow:0 18px 42px #39224b22;transition:transform .35s}.hero-art img:hover{transform:translateY(-4px) rotate(.5deg)}
+.offers{background:linear-gradient(125deg,#f3efff,#fff8fb 48%,#f8e7f1);padding-top:28px;padding-bottom:30px}.offers-title h2,.heading h2{font-family:Georgia,'Times New Roman',serif;letter-spacing:-.035em}.offers-title p{color:#9b3975}.offer-card{border-radius:17px;border:1px solid #ffffffd9;box-shadow:0 8px 24px #39224b0a;transition:transform .22s,box-shadow .22s;position:relative;overflow:hidden}.offer-card:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,#ffffff32,transparent 55%);pointer-events:none}.offer-card:hover{transform:translateY(-5px);box-shadow:0 15px 30px #39224b18}.offer-cta{box-shadow:0 4px 12px #df3d8825}
+.section{padding-top:48px;padding-bottom:48px}.heading{margin-bottom:25px}.heading h2{font-size:clamp(2rem,3.5vw,2.8rem)}.heading p{font-size:.97rem}.category-tile{border-radius:17px;background:linear-gradient(145deg,#fff,#fff5fa);box-shadow:0 5px 18px #39224b06;transition:transform .2s,box-shadow .2s,border-color .2s}.category-tile:hover{transform:translateY(-4px);box-shadow:0 12px 24px #39224b10;border-color:#e9a9cc}.category-tile .emoji{font-size:1.9rem}
+.filter{transition:all .2s}.currency-tools{background:#fff;border:1px solid #f0e2ef;border-radius:15px;padding:12px;box-shadow:0 5px 18px #39224b06}.currency-tools select{border-radius:999px;padding:9px 13px}.count{font-weight:650}
+.product-grid{gap:20px}.product-card{border-color:#efe4ef;border-radius:18px;box-shadow:0 6px 22px #39224b08;transition:transform .25s,border-color .25s,box-shadow .25s}.product-card:hover{transform:translateY(-6px);border-color:#e8b5d2;box-shadow:0 18px 36px #39224b15}.product-image{background:linear-gradient(135deg,#fff4f9,#f5f0ff)}.product-image img{transition:transform .45s}.product-card:hover .product-image img{transform:scale(1.035)}.product-info{padding:15px}.tag{letter-spacing:.02em}.product-info h3{font-size:.96rem;line-height:1.45}.price{font-size:1.05rem;color:#8b3473}.product-link{border-radius:999px;border-color:#e9c2d9;background:#fff9fc;transition:all .2s}.product-link:hover{background:linear-gradient(90deg,#df3d88,#9d3d9c);border-color:transparent;color:#fff;transform:translateY(-1px)}
+.video-section{max-width:none;padding-left:max(25px,calc((100% - 1400px)/2));padding-right:max(25px,calc((100% - 1400px)/2));background:radial-gradient(ellipse at 10% 0%,#fff 0%,transparent 30%),linear-gradient(135deg,#fff4f9,#f1edff);}.video-card{border-radius:19px;box-shadow:0 12px 30px #39224b0d;transition:transform .22s,box-shadow .22s}.video-card:hover{transform:translateY(-4px);box-shadow:0 18px 38px #39224b16}.video-art{background:linear-gradient(135deg,#f8cfe1,#e7dcff 55%,#fff0f7)}.video-art:after{box-shadow:0 6px 18px #39224b18;transition:transform .2s}.video-card:hover .video-art:after{transform:scale(1.08)}
+.trust{background:linear-gradient(90deg,#fff7fb,#f8f5ff,#fff7fb);font-size:.88rem}.footer{background:radial-gradient(ellipse at 80% 0%,#563260 0%,transparent 42%),linear-gradient(120deg,#211638,#302044);padding-top:42px}.footer-brand{color:#ffd6e8}.copyright{border-color:#ffffff2c}
+.welcome-overlay{background:rgba(25,14,39,.76);backdrop-filter:blur(9px);animation:popupFade .35s ease-out}.welcome-modal{border:1px solid #fff;outline:1px solid #f1bfd9;outline-offset:-7px;border-radius:28px;background:radial-gradient(ellipse at top right,#fff 0%,transparent 38%),linear-gradient(145deg,#fff9fc,#f0eaff);box-shadow:0 30px 100px #10091f80;padding:39px 27px 30px;animation:popupRise .45s cubic-bezier(.2,.8,.2,1)}.welcome-flower{filter:drop-shadow(0 6px 9px #df3d8825);animation:flowerFloat 3.2s ease-in-out infinite}.welcome-modal h2{background:linear-gradient(100deg,#211638,#a52c70 70%,#51315e);-webkit-background-clip:text;background-clip:text;color:transparent}.welcome-modal p{line-height:1.8}.welcome-marquee{border-radius:12px;border:1px solid #f0c7de;background:#fff9fc;box-shadow:inset 0 1px 8px #df3d8808}.welcome-shop{box-shadow:0 8px 18px #df3d8838;transition:transform .2s,box-shadow .2s}.welcome-shop:hover{transform:translateY(-2px);box-shadow:0 12px 24px #df3d8848}.welcome-continue{transition:background .2s,border-color .2s}.welcome-continue:hover{background:#f6f0fb;border-color:#c9b5d6}.welcome-close{transition:transform .2s,background .2s}.welcome-close:hover{transform:rotate(90deg);background:#ffeaf4}
+@keyframes popupFade{from{opacity:0}to{opacity:1}}@keyframes popupRise{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes flowerFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@media(max-width:680px){.hero-inner{padding-top:32px;padding-bottom:32px}.hero h1{font-size:3.3rem}.hero-art img{border-radius:16px}.section{padding-top:37px;padding-bottom:37px}.product-grid{gap:11px}.product-card{border-radius:14px}.product-info{padding:11px}.video-section{padding-left:13px;padding-right:13px}.welcome-modal{padding:34px 18px 25px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
 </style></head><body>
+
+<div class="welcome-overlay" id="welcomePopup" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
+  <div class="welcome-modal">
+    <button class="welcome-close" id="welcomeClose" type="button" aria-label="Close welcome popup">×</button>
+    <div class="welcome-flower" aria-hidden="true">🌸 ✨ 🌸</div>
+    <h2 id="welcomeTitle">Welcome to ZeeChoices!</h2>
+    <p>Thoughtful designs, creative downloads, everyday style and gifts—find something you love.</p>
+    <div class="welcome-marquee" aria-label="Welcome to ZeeChoices, shop our Etsy collection, thoughtful designs and digital downloads"><div class="welcome-marquee-track" aria-hidden="true"><span>✦ WELCOME TO ZEECHOICES</span><span>♡ THOUGHTFUL DESIGNS</span><span>✧ SHOP OUR COLLECTION</span><span>➜ VISIT US ON ETSY</span><span>✦ WELCOME TO ZEECHOICES</span><span>♡ THOUGHTFUL DESIGNS</span><span>✧ SHOP OUR COLLECTION</span><span>➜ VISIT US ON ETSY</span></div></div>
+    <div class="welcome-actions"><a class="welcome-shop" href="https://www.etsy.com/shop/ZeeChoiceStore" target="_blank" rel="noopener noreferrer">Visit Our Etsy Shop ↗</a><button class="welcome-continue" id="welcomeContinue" type="button">Continue Browsing</button></div>
+  </div>
+</div>
+
 <div class="announcement">Welcome to ZeeChoices · Thoughtful Designs for Everyday Style</div>
 <header class="topbar"><div class="header-main">
 <a class="brand" href="#" aria-label="ZeeChoices home"><span class="brand-mark">🌸</span><span><span class="brand-name">ZeeChoices</span><span class="brand-tag">Thoughtful Designs - Everyday Style</span></span></a>
 <form class="searchbox" id="searchForm" role="search"><input id="productSearch" type="search" placeholder="Search for products, designs, categories…" aria-label="Search products"><button type="submit" aria-label="Search">⌕</button></form>
 <div class="header-actions"><a href="https://www.etsy.com/shop/ZeeChoiceStore" target="_blank" rel="noopener noreferrer"><span>♙</span>Sign In on Etsy</a><a href="https://www.etsy.com/shop/ZeeChoiceStore" target="_blank" rel="noopener noreferrer"><span>♡</span>Visit Favourites</a><a href="https://www.etsy.com/shop/ZeeChoiceStore" target="_blank" rel="noopener noreferrer"><span>▣</span>Shop on Etsy</a></div>
 </div><nav class="nav" aria-label="Main navigation">
-<a class="active" href="#">⌂ &nbsp;Home</a><a href="#products" data-nav-category="All Products">▦ &nbsp;All Products⌄</a><a href="#products" data-nav-category="Kids & Learning">♧ &nbsp;Kids & Learning⌄</a><a href="#products" data-nav-category="Digital Downloads">⇩ &nbsp;Digital Downloads⌄</a><a href="#products" data-nav-category="Clothing">♟ &nbsp;Clothing⌄</a><a href="#products" data-nav-category="Bags & Accessories">▣ &nbsp;Bags & Accessories⌄</a><a href="#products" data-nav-category="Home & Gifts">⌂ &nbsp;Home & Gifts⌄</a><a href="#offers">◇ &nbsp;Featured Collections</a>
+<a class="active" href="#">⌂ &nbsp;Home</a><a href="#products" data-nav-category="All Products">▦ &nbsp;All Products⌄</a><a href="#products" data-nav-category="Kids & Learning">♧ &nbsp;Kids & Learning⌄</a><a href="#products" data-nav-category="Digital Downloads">⇩ &nbsp;Digital Downloads⌄</a><a href="#products" data-nav-category="Clothing">♟ &nbsp;Clothing⌄</a><a href="#products" data-nav-category="Bags & Accessories">▣ &nbsp;Bags & Accessories⌄</a><a href="#products" data-nav-category="Home & Gifts">⌂ &nbsp;Home & Gifts⌄</a><a href="#offers">◇ &nbsp;Featured Collections</a><a href="#videos">▶ &nbsp;Videos</a>
 </nav></header>
+<div class="text-marquee" aria-label="ZeeChoices highlights"><div class="text-marquee-track" aria-hidden="true"><div><span>✦ Welcome to ZeeChoices</span><span>♡ Thoughtful Designs</span><span>✧ Everyday Style</span><span>➜ Shop Our Etsy Store</span><span>✦ Digital Downloads & Gifts</span></div><div><span>✦ Welcome to ZeeChoices</span><span>♡ Thoughtful Designs</span><span>✧ Everyday Style</span><span>➜ Shop Our Etsy Store</span><span>✦ Digital Downloads & Gifts</span></div></div></div>
 <main>
 <section class="hero"><div class="hero-inner"><div>
 <div class="eyebrow">Thoughtful Designs · Everyday Style</div><h1>ZeeChoices</h1><p class="tagline">Thoughtful Designs - Everyday Style</p>
@@ -51,7 +109,8 @@
 </div></section>
 <section class="section" id="products"><div class="heading"><h2>Explore Our Products</h2><p>Browse by category or search for a product.</p></div>
 <div class="filters"><button class="filter active" data-category="All Products">All Products</button><button class="filter" data-category="Kids & Learning">Kids & Learning</button><button class="filter" data-category="Digital Downloads">Digital Downloads</button><button class="filter" data-category="Clothing">Clothing</button><button class="filter" data-category="Bags & Accessories">Bags & Accessories</button><button class="filter" data-category="Accessories & Gifts">Accessories & Gifts</button><button class="filter" data-category="Home & Gifts">Home & Gifts</button></div>
-<p class="count" id="resultCount" aria-live="polite"></p><div class="product-grid" id="productGrid"></div><div class="empty" id="emptyState">No products found. Try another search or category.</div></section>
+<div class="currency-tools"><label for="currencySelect">Display currency:</label><select id="currencySelect" aria-label="Display currency"><option value="AUTO">Detect my country automatically</option><option value="USD">USD — US Dollar</option><option value="GBP">GBP — British Pound</option><option value="EUR">EUR — Euro</option><option value="PKR">PKR — Pakistani Rupee</option><option value="CAD">CAD — Canadian Dollar</option><option value="AUD">AUD — Australian Dollar</option><option value="INR">INR — Indian Rupee</option><option value="AED">AED — UAE Dirham</option><option value="SAR">SAR — Saudi Riyal</option><option value="NZD">NZD — New Zealand Dollar</option><option value="JPY">JPY — Japanese Yen</option><option value="CNY">CNY — Chinese Yuan</option><option value="CHF">CHF — Swiss Franc</option><option value="SGD">SGD — Singapore Dollar</option></select><span id="currencyStatus" aria-live="polite">Detecting your country…</span></div><p class="count" id="resultCount" aria-live="polite"></p><div class="product-grid" id="productGrid"></div><div class="empty" id="emptyState">No products found. Try another search or category.</div></section>
+<section class="section video-section" id="videos"><div class="heading"><h2>Watch ZeeChoices</h2><p>Product previews, creative ideas and a closer look at our collections.</p></div><div class="video-grid"><article class="video-card"><div class="video-art" aria-hidden="true">🛍️</div><div class="video-copy"><h3>Product Highlights</h3><p>Short videos showing our designs, gifts and accessories. Product videos coming soon.</p></div></article><article class="video-card"><div class="video-art" aria-hidden="true">🎨</div><div class="video-copy"><h3>Digital Designs & Downloads</h3><p>Preview printable books, editable designs and digital products. Video previews coming soon.</p></div></article><article class="video-card"><div class="video-art" aria-hidden="true">🌸</div><div class="video-copy"><h3>Meet ZeeChoices</h3><p>A little introduction to our shop and the ideas behind our collections. Brand video coming soon.</p></div></article></div><p class="video-note">Videos will appear here when ZeeChoices video links are ready. No unrelated or unofficial videos are shown.</p></section>
 <div class="trust"><span>🚚 Digital & Physical Finds</span><span>🔒 Checkout on Etsy</span><span>♡ Unique Designs</span><span>◎ Worldwide Audience</span></div></main>
 <footer class="footer"><div class="footer-grid">
 <div><div class="footer-brand">ZeeChoices 🌸</div><p>Thoughtful Designs - Everyday Style</p><p>Creative designs, printable books, stylish accessories and more.</p><p><a style="display:inline-block;margin-right:12px" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a><a style="display:inline-block;margin-right:12px" href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer">Pinterest</a></p></div>
@@ -61,22 +120,138 @@
 <div><h3>Visit ZeeChoices</h3><p>Browse the full collection and check product details, options and checkout on Etsy.</p><a class="pill" style="display:inline-flex" href="https://www.etsy.com/shop/ZeeChoiceStore" target="_blank" rel="noopener noreferrer">Visit Etsy ↗</a></div>
 </div><div class="copyright"><span>© <span id="year"></span> ZeeChoices. All rights reserved.</span><span>Purchases are completed through Etsy.</span></div></footer>
 <script>
+const grid=document.getElementById('productGrid');
+const search=document.getElementById('productSearch');
+const count=document.getElementById('resultCount');
+const empty=document.getElementById('emptyState');
+const currencySelect=document.getElementById('currencySelect');
+const currencyStatus=document.getElementById('currencyStatus');
+let displayCurrency='USD', currencyRates=null, autoCurrency='USD', countryName='';
 let PRODUCTS=[];
-const grid=document.getElementById('productGrid'),search=document.getElementById('productSearch'),count=document.getElementById('resultCount'),empty=document.getElementById('emptyState');
-let activeCategory='All Products';document.getElementById('year').textContent=new Date().getFullYear();
-function categoryFor(p){const s=((p.category||'')+' '+(p.title||'')).toLowerCase();if(/kids|learning|preschool|alphabet|activity|puzzle|rabbit|counting|colour|color/.test(s))return 'Kids & Learning';if(/digital|download|printable|png|pdf|template|editable|family tree/.test(s))return 'Digital Downloads';if(/shirt|clothing|t-shirt|hoodie|wear/.test(s))return 'Clothing';if(/bag|tote|duffle|gym bag|hat|phone case|mug|accessor/.test(s))return 'Bags & Accessories';return 'Home & Gifts'}
-function decodeText(value){const el=document.createElement('textarea');el.innerHTML=String(value||'');return el.value}
-function normalizeProduct(p){const title=decodeText(p.title||'ZeeChoices product');const url=String(p.url||p.listing_url||'').trim();return {title,url:url||'https://www.etsy.com/shop/ZeeChoiceStore',price:p.price!=null?(String(p.currency||'USD')+' '+String(p.price).replace(/^USD\s*/i,'')):'See Etsy for price',image:p.image||'',alt:decodeText(p.alt||title),category:p.category||categoryFor({...p,title})}}
-function makeCard(p){const c=document.createElement('article');c.className='product-card';const imglink=document.createElement('a');imglink.className='product-image';imglink.href=p.url;imglink.target='_blank';imglink.rel='noopener noreferrer';imglink.setAttribute('aria-label',p.title);
-if(p.image){const img=document.createElement('img');img.src=p.image;img.alt=p.alt||p.title;img.loading='lazy';img.onerror=()=>{img.style.display='none';imglink.textContent='🌸';imglink.style.fontSize='2.4rem'};imglink.appendChild(img)}else imglink.textContent='🌸';
-const info=document.createElement('div');info.className='product-info';const tag=document.createElement('span');tag.className='tag';tag.textContent=p.category;const h=document.createElement('h3');h.textContent=p.title;const price=document.createElement('p');price.className='price';price.textContent = (p.price !== null && p.price !== undefined && p.price !== "" && Number.isFinite(Number(p.price))) ? ${String(p.currency || "USD").toUpperCase()} ${Number(p.price).toFixed(2)} : "See Etsy for price";
-const a=document.createElement('a');a.className='product-link';a.href=p.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=p.url.includes('/listing/')?'BUY NOW ON ETSY ↗':'BUY NOW ON ETSY ↗';info.append(tag,h,price,a);c.append(imglink,info);return c}
-function loadProducts(){fetch('./products.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('products.json load failed');return r.json()}).then(data=>{PRODUCTS=(Array.isArray(data)?data:(data.products||[])).map(normalizeProduct);grid.replaceChildren();PRODUCTS.forEach(p=>grid.appendChild(makeCard(p)));render()}).catch(err=>{console.error(err);grid.replaceChildren();empty.hidden=false;empty.textContent='Products could not load. Please refresh later.';count.textContent='Products unavailable';});}
-function render(){const q=search.value.trim().toLowerCase();let shown=0;Array.from(grid.children).forEach((c,i)=>{const p=PRODUCTS[i];const cat=activeCategory==='All Products'||p.category===activeCategory;const txt=(p.title+' '+p.category+' '+p.alt).toLowerCase().includes(q);c.hidden=!(cat&&txt);if(!c.hidden)shown++});count.textContent=q||activeCategory!=='All Products'?`Showing ${shown} of ${PRODUCTS.length} products`:`${PRODUCTS.length} products across all categories`;empty.style.display=shown?'none':'block';document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.category===activeCategory))}
-function chooseCategory(c){activeCategory=c;render();document.getElementById('products').scrollIntoView({behavior:'smooth',block:'start'})}
+let activeCategory='All Products';
+document.getElementById('year').textContent=new Date().getFullYear();
+
+// Show the welcome popup on every fresh page load; close only for this visit.
+(function(){
+  const popup=document.getElementById('welcomePopup');
+  const closeButton=document.getElementById('welcomeClose');
+  const continueButton=document.getElementById('welcomeContinue');
+  function closeWelcome(){popup.hidden=true;}
+  closeButton.addEventListener('click',closeWelcome);
+  continueButton.addEventListener('click',closeWelcome);
+  popup.addEventListener('click',function(event){if(event.target===popup)closeWelcome();});
+  document.addEventListener('keydown',function(event){if(event.key==='Escape'&&!popup.hidden)closeWelcome();});
+})();
+
+
+function safeText(value,fallback=''){
+  return (typeof value==='string'||typeof value==='number') ? String(value).trim() : fallback;
+}
+function safeUrl(value){
+  try { const u=new URL(safeText(value)); return (u.protocol==='https:'||u.protocol==='http:')?u.href:''; }
+  catch { return ''; }
+}
+function categoryFor(p){
+  const explicit=safeText(p.category);
+  if(explicit){
+    const low=explicit.toLowerCase();
+    if(low.includes('kid')||low.includes('learn')||low.includes('book')) return 'Kids & Learning';
+    if(low.includes('digital')||low.includes('download')||low.includes('print')) return 'Digital Downloads';
+    if(low.includes('cloth')||low.includes('shirt')||low.includes('apparel')) return 'Clothing';
+    if(low.includes('bag')||low.includes('accessor')||low.includes('hat')||low.includes('case')) return 'Bags & Accessories';
+    return 'Home & Gifts';
+  }
+  const s=(safeText(p.title)+' '+safeText(p.alt)).toLowerCase();
+  if(/kids|kid |preschool|learning|activity book|alphabet|counting|worksheet|storybook|rabbit|princess/.test(s)) return 'Kids & Learning';
+  if(/digital|download|printable|png|pdf|template|editable|wall art|family tree/.test(s)) return 'Digital Downloads';
+  if(/shirt|t-shirt|tee|hoodie|sweatshirt|bodysuit|jersey|crop top|clothing/.test(s)) return 'Clothing';
+  if(/bag|tote|backpack|hat|cap|phone case|beanie|wallet/.test(s)) return 'Bags & Accessories';
+  return 'Home & Gifts';
+}
+function normalizeProduct(p){
+  const title=safeText(p.title||p.name,'ZeeChoices product');
+  const raw=String(p.price??'').trim();
+  let amount=null;
+  if(raw){
+    const cleaned=raw.replace(/,/g,'').replace(/[^0-9.\-]/g,'');
+    const n=Number(cleaned); if(Number.isFinite(n)&&cleaned!=='') amount=n;
+  }
+  let sourceCurrency=safeText(p.currency,'USD').toUpperCase();
+  if(/[£]/.test(raw)) sourceCurrency='GBP'; else if(/[€]/.test(raw)) sourceCurrency='EUR'; else if(/\$/.test(raw)&&!p.currency) sourceCurrency='USD';
+  return {title,alt:safeText(p.alt,title),image:safeUrl(p.image||p.image_url),url:safeUrl(p.url)||'https://www.etsy.com/shop/ZeeChoiceStore',amount,sourceCurrency,category:categoryFor(p)};
+}
+function formatPrice(p){
+  if(p.amount===null) return 'See Etsy for price';
+  let amount=p.amount;
+  if(currencyRates && p.sourceCurrency && currencyRates[p.sourceCurrency] && currencyRates[displayCurrency]) amount=(p.amount/currencyRates[p.sourceCurrency])*currencyRates[displayCurrency];
+  else if(p.sourceCurrency!==displayCurrency) return new Intl.NumberFormat(undefined,{style:'currency',currency:p.sourceCurrency}).format(p.amount)+' (Etsy price)';
+  try{return new Intl.NumberFormat(undefined,{style:'currency',currency:displayCurrency,currencyDisplay:'symbol'}).format(amount)}catch{return displayCurrency+' '+amount.toFixed(2)}
+}
+async function detectCurrency(){
+  // Country detection and exchange rates are optional external services; if unavailable, Etsy's original currency remains visible.
+  try{
+    const response=await fetch('https://ipapi.co/json/',{cache:'no-store'});
+    if(!response.ok) throw new Error('Country lookup unavailable');
+    const geo=await response.json();
+    if(geo.currency && /^[A-Z]{3}$/.test(geo.currency)) autoCurrency=geo.currency;
+    countryName=geo.country_name||'';
+  }catch(e){
+    const locale=(navigator.language||'en-US');
+    const region=(locale.match(/[-_]([A-Z]{2})$/i)||[])[1]?.toUpperCase();
+    const fallback={PK:'PKR',US:'USD',GB:'GBP',CA:'CAD',AU:'AUD',IN:'INR',AE:'AED',SA:'SAR',NZ:'NZD',JP:'JPY',CN:'CNY',SG:'SGD',CH:'CHF'};
+    autoCurrency=fallback[region]||'USD';
+  }
+  displayCurrency=currencySelect.value==='AUTO'?autoCurrency:currencySelect.value;
+  try{
+    const base=Array.from(new Set(PRODUCTS.map(p=>p.sourceCurrency).concat([displayCurrency,'USD']))).join(',');
+    const response=await fetch('https://open.er-api.com/v6/latest/USD',{cache:'no-store'});
+    if(!response.ok) throw new Error('Rates unavailable');
+    const data=await response.json(); if(data.result==='success') currencyRates=data.rates;
+  }catch(e){currencyRates=null;}
+  currencyStatus.textContent='Showing '+displayCurrency+(countryName&&currencySelect.value==='AUTO'?' for '+countryName:'')+(currencyRates?' · converted estimate':' · original Etsy prices if conversion unavailable');
+  render();
+}
+currencySelect.addEventListener('change',()=>{displayCurrency=currencySelect.value==='AUTO'?autoCurrency:currencySelect.value;currencyStatus.textContent='Updating prices…';detectCurrency();});
+function makeCard(p){
+  const c=document.createElement('article'); c.className='product-card';
+  const imglink=document.createElement('a'); imglink.className='product-image'; imglink.href=p.url; imglink.target='_blank'; imglink.rel='noopener noreferrer'; imglink.setAttribute('aria-label','View '+p.title+' on Etsy');
+  if(p.image){
+    const img=document.createElement('img'); img.src=p.image; img.alt=p.alt||p.title; img.loading='lazy';
+    img.onerror=()=>{const ph=document.createElement('span');ph.textContent='🌸';ph.setAttribute('aria-label',p.title);img.replaceWith(ph)};
+    imglink.appendChild(img);
+  } else { imglink.textContent='🌸'; }
+  const info=document.createElement('div'); info.className='product-info';
+  const tag=document.createElement('span'); tag.className='tag'; tag.textContent=p.category;
+  const h=document.createElement('h3'); h.textContent=p.title;
+  const price=document.createElement('p'); price.className='price'; price.textContent=formatPrice(p);
+  const a=document.createElement('a'); a.className='product-link'; a.href=p.url; a.target='_blank'; a.rel='noopener noreferrer'; a.textContent=p.url.includes('/listing/')?'BUY NOW ON ETSY ↗':'VISIT ETSY SHOP ↗';
+  info.append(tag,h,price,a); c.append(imglink,info); return c;
+}
+function render(){
+  const q=search.value.trim().toLowerCase(); let shown=0; grid.replaceChildren();
+  PRODUCTS.forEach(p=>{
+    const matchesCategory=activeCategory==='All Products'||p.category===activeCategory;
+    const matchesText=(p.title+' '+p.category+' '+p.alt).toLowerCase().includes(q);
+    if(matchesCategory&&matchesText){grid.appendChild(makeCard(p));shown++;}
+  });
+  count.textContent=q||activeCategory!=='All Products'?`Showing ${shown} of ${PRODUCTS.length} products`:`${PRODUCTS.length} products across all categories`;
+  empty.style.display=shown?'none':'block';
+  document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.category===activeCategory));
+}
+function chooseCategory(c){activeCategory=c;render();document.getElementById('products').scrollIntoView({behavior:'smooth',block:'start'});}
 document.querySelectorAll('[data-category]').forEach(e=>e.addEventListener('click',()=>chooseCategory(e.dataset.category)));
 document.querySelectorAll('[data-nav-category]').forEach(e=>e.addEventListener('click',()=>chooseCategory(e.dataset.navCategory)));
 document.querySelectorAll('[data-offer-category]').forEach(e=>e.addEventListener('click',()=>chooseCategory(e.dataset.offerCategory)));
-document.getElementById('searchForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('products').scrollIntoView({behavior:'smooth',block:'start'});render()});search.addEventListener('input',render);render();
-loadProducts();
+document.getElementById('searchForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('products').scrollIntoView({behavior:'smooth',block:'start'});render();});
+search.addEventListener('input',render);
+fetch('./products.json',{cache:'no-store'})
+  .then(response=>{if(!response.ok)throw new Error('products.json could not be loaded');return response.json();})
+  .then(data=>{
+    const rows=Array.isArray(data)?data:(Array.isArray(data.products)?data.products:[]);
+    PRODUCTS=rows.map(normalizeProduct).filter(p=>p.title);
+    if(!PRODUCTS.length){count.textContent='No products found in products.json.';empty.style.display='block';return;}
+    render();
+    detectCurrency();
+  })
+  .catch(error=>{console.error('ZeeChoices products load error:',error);count.textContent='Products could not load. Check that products.json is in the same folder as index.html.';grid.replaceChildren();empty.style.display='block';});
 </script></body></html>
