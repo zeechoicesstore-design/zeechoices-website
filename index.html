@@ -84,7 +84,23 @@ body{background:linear-gradient(180deg,#fff 0%,#fffafd 55%,#fff 100%)}
   .nav{gap:6px;padding-inline:9px;}
   .nav a{font-size:.73rem;padding:9px 5px;}
 }
-</style></head><body>
+  .product-card {
+  border: 1px solid #f3d8e8;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(80, 40, 90, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(80, 40, 90, 0.14);
+}
+</style>
+  
+
+
+</head><body>
 
 <div class="welcome-overlay" id="welcomePopup" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
   <div class="welcome-modal">
