@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zeechoicesstore-design.github.io/zeechoices-website/sitemap.xml
